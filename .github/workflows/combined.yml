@@ -1,0 +1,36 @@
+name: Combine Blocklists
+
+on:
+  push:
+    paths:
+      - 'lists/**'
+  workflow_dispatch:
+
+jobs:
+  combine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Combine lists
+        run: |
+          echo "#-------------------------------------------------------------" > lists/combined.txt
+          echo "#- Combined Blocklist for Sacam, Ads, Phishing and Trackers --" >> lists/combined.txt
+          echo "#------ https://github.com/$(echo $GITHUB_REPOSITORY) --------" >> lists/combined.txt
+          echo "#------------ Updated: $(date -u '+%Y-%m-%d %H:%M UTC') ------" >> lists/combined.txt
+          echo "#-------------------------------------------------------------" >> lists/combined.txt
+          echo "" >> lists/combined.txt
+          echo "# === Tracker & Ads ===" >> lists/combined.txt
+          cat lists/tracker.txt >> lists/combined.txt
+          echo "" >> lists/combined.txt
+          echo "# === Scam & Phishing ===" >> lists/combined.txt
+          cat lists/scam.txt >> lists/combined.txt
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lists/combined.txt
+          git diff --cached --quiet || git commit -m "chore: update combined.txt"
+          git push
