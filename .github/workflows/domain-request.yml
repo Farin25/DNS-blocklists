@@ -1,0 +1,71 @@
+name: Domain Request
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process:
+    if: contains(github.event.issue.labels.*.name, 'domain-request')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Parse issue
+        id: parse
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          DOMAIN=$(echo "$BODY" | grep -A1 "### Domain" | tail -1 | tr -d '[:space:]')
+          CATEGORY=$(echo "$BODY" | grep -A1 "### Category" | tail -1 | tr -d '[:space:]')
+
+          if echo "$CATEGORY" | grep -q "tracker"; then
+            FILE="lists/tracker.txt"
+          else
+            FILE="lists/scam.txt"
+          fi
+
+          echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
+          echo "file=$FILE" >> $GITHUB_OUTPUT
+
+      - name: Add domain and create PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOMAIN: ${{ steps.parse.outputs.domain }}
+          FILE: ${{ steps.parse.outputs.file }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="domain-request/$ISSUE_NUMBER"
+          git checkout -b $BRANCH
+
+          echo "0.0.0.0 $DOMAIN" >> $FILE
+
+          git add $FILE
+          git commit -m "feat: add $DOMAIN to $FILE (closes #$ISSUE_NUMBER)"
+          git push origin $BRANCH
+
+          gh pr create \
+            --title "feat: add $DOMAIN" \
+            --body "Adds \`$DOMAIN\` to \`$FILE\`.\n\nCloses #$ISSUE_NUMBER" \
+            --base main \
+            --head $BRANCH \
+            --label "domain-request"
+
+      - name: Comment on issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOMAIN: ${{ steps.parse.outputs.domain }}
+          FILE: ${{ steps.parse.outputs.file }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "Thanks for your request! A pull request has been created to add \`$DOMAIN\` to \`$FILE\`. It will be reviewed shortly."

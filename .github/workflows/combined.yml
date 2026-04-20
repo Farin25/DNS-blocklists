@@ -13,12 +13,12 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Combine lists
         run: |
           echo "#-------------------------------------------------------------" > lists/combined.txt
-          echo "#- Combined Blocklist for Sacam, Ads, Phishing and Trackers --" >> lists/combined.txt
+          echo "#- Combined Blocklist for Scam, Ads, Phishing and Trackers ---" >> lists/combined.txt
           echo "#------ https://github.com/$(echo $GITHUB_REPOSITORY) --------" >> lists/combined.txt
           echo "#------------ Updated: $(date -u '+%Y-%m-%d %H:%M UTC') ------" >> lists/combined.txt
           echo "#-------------------------------------------------------------" >> lists/combined.txt

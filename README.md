@@ -1,4 +1,48 @@
 # DNS-blocklists
-Public DNS blocklists focused on privacy, ads, trackers, and region-specific domains. Maintained for Pi-hole, AdGuard Home, and other DNS filtering systems.
+Public DNS blocklists focused on privacy, ads, trackers and Scam, Phishing. Maintained for Pi-hole, AdGuard Home, and other DNS filtering systems.
 
-#
+
+
+## Lists
+ 
+| File | Description | URL |
+|------|-------------|-----|
+| `lists/tracker.txt` | Tracking domains (analytics, telemetry, fingerprinting and advertsiment) | https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/tracker.txt |
+| `lists/scam.txt` | Scam and phishing domains https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/scam.txt |
+| `lists/combined.txt` | Tracker and Scam list combined|https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/combined.txt |
+---
+
+## Usage
+
+### Pi-hole
+
+Go to your Pi-hole Webinterface: `<pihole-ip>/admin`, log in and then go to settings and add the URL of the list you want:
+
+for Trackers and Advertsiment:
+```
+https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/tracker.txt
+```
+
+for Scam and Phishing:
+```
+https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/scam.txt
+```
+
+for all combinied:
+```
+https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/combined.txt
+```
+
+Than run Upadte Gravity List under **Tools -> Update Gravity**.
+
+## Links
+- [Changelog](CHANGELOG.md)
+- [Lists](lists/)
+
+## How can I contribute to the list?
+
+
+
+## License
+
+[MIT](LICENSE)
