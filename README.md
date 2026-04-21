@@ -45,10 +45,6 @@ Then run Update Gravity List under **Tools -> Update Gravity**.
 
 Then create an issue using the domain request template under the following link: [https://github.com/Farin25/DNS-blocklists/issues](https://github.com/Farin25/DNS-blocklists/issues).
 
-### Want to contribute to the repository and write code?
-
-Then read through the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
 
 ## License
 

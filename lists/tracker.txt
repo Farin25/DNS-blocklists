@@ -1,27 +1,16 @@
 #-------------------------------------------------------------
 #------------ Blocklist for Trackers and Ads------------------
 #-------------------------------------------------------------
-
-# Adobe
 0.0.0.0 cc-api-data.adobe.io
 0.0.0.0 aepxlg.adobe.com
 0.0.0.0 adobecorp.data.adobedc.net
 0.0.0.0 hbrt.adobe.com
-
-# Microsoft
 0.0.0.0 eu-mobile.events.data.microsoft.com
 0.0.0.0 mobile.events.data.microsoft.com
 0.0.0.0 bat.bing.com
-
-# Sentry
 0.0.0.0 *.ingest.sentry.io
-
-# Amazon
 0.0.0.0 global.telemetry.insights.video.a2z.com
 0.0.0.0 c.amazon-adsystem.com
-
-
-# Google
 0.0.0.0 www.google-analytics.com
 0.0.0.0 www.googletagmanager.com
 0.0.0.0 www.googleadservices.com
@@ -32,60 +21,24 @@
 0.0.0.0 googleads.g.doubleclick.net
 0.0.0.0 securepubads.g.doubleclick.net
 0.0.0.0 ep1.adtrafficquality.google
-
-# Criteo
 0.0.0.0 grid-bidder.criteo.com
 0.0.0.0 static.criteo.net
 0.0.0.0 dynamic.criteo.com
-
-# AppNexus / Xandr
 0.0.0.0 ib.adnxs.com
-
-# Rubicon / Magnite
 0.0.0.0 fastlane.rubiconproject.com
-
-# Pubmatic
 0.0.0.0 hbopenbid.pubmatic.com
-
-# 3Lift
 0.0.0.0 tlx.3lift.com
-
-# Index Exchange / Casale
 0.0.0.0 htlb.casalemedia.com
-
-# Adscale
 0.0.0.0 hb.adscale.de
-
-# Adsrvr / The Trade Desk
 0.0.0.0 direct.adsrvr.org
 0.0.0.0 match.adsrvr.org
-
-# Yieldlab
 0.0.0.0 ad.yieldlab.net
-
-# ConnectAd
 0.0.0.0 i.connectad.io
-
-# Kameleoon (A/B Testing)
 0.0.0.0 eu-data.kameleoon.io
-
-# ID5 (Identity)
 0.0.0.0 id5-sync.com
-
-# Hotjar
 0.0.0.0 static.hotjar.com
-
-# Taboola
 0.0.0.0 cdn.taboola.com
-
-# CreativeCDN
 0.0.0.0 tags.creativecdn.com
-
-# Adnami
 0.0.0.0 functions.adnami.io
-
-# Otto
 0.0.0.0 orbidder.otto.de
-
-# Deezer
 0.0.0.0 rec.deezer.com
