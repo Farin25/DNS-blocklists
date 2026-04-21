@@ -32,8 +32,7 @@ jobs:
           fi
 
           echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
-          printf "\n0.0.0.0 %s" "$DOMAIN" >> $FILE
-          
+          echo "file=$FILE" >> $GITHUB_OUTPUT
 
       - name: Add domain and create PR
         env:
@@ -47,11 +46,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           BRANCH="domain-request/$ISSUE_NUMBER"
-          git checkout -b $BRANCH
+          git checkout -b $BRANCH 2>/dev/null || git checkout $BRANCH
 
-          echo "0.0.0.0 $DOMAIN" >> $FILE
+          printf "\n0.0.0.0 %s" "$DOMAIN" >> "$FILE"
 
-          git add $FILE
+          git add "$FILE"
           git commit -m "feat: add $DOMAIN to $FILE (closes #$ISSUE_NUMBER)"
           git push origin $BRANCH --force
 
