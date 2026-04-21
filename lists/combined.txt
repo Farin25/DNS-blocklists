@@ -1,7 +1,7 @@
 #-------------------------------------------------------------
 #- Combined Blocklist for Scam, Ads, Phishing and Trackers ---
 #------ https://github.com/Farin25/DNS-blocklists --------
-#------------ Updated: 2026-04-21 15:33 UTC ------
+#------------ Updated: 2026-04-21 18:49 UTC ------
 #-------------------------------------------------------------
 
 # === Tracker & Ads ===
@@ -15,7 +15,6 @@
 0.0.0.0 eu-mobile.events.data.microsoft.com
 0.0.0.0 mobile.events.data.microsoft.com
 0.0.0.0 bat.bing.com
-0.0.0.0 *.ingest.sentry.io
 0.0.0.0 global.telemetry.insights.video.a2z.com
 0.0.0.0 c.amazon-adsystem.com
 0.0.0.0 www.google-analytics.com
@@ -54,3 +53,9 @@
 #------------ Blocklist for Scam and Phishing------------------
 #--------------------------------------------------------------
 0.0.0.0 mmddtzcom3.com
+0.0.0.0 mmddtzcom3.com
+0.0.0.0 chinadomainservice.com
+0.0.0.0 mailcloudlead.com
+0.0.0.0 chinaregistry.com.cn
+0.0.0.0 vr-lnfo.net
+0.0.0.0 db-erweitern2.info
