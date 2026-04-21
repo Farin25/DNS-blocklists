@@ -32,7 +32,8 @@ jobs:
           fi
 
           echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
-          echo "file=$FILE" >> $GITHUB_OUTPUT
+          printf "\n0.0.0.0 %s" "$DOMAIN" >> $FILE
+          
 
       - name: Add domain and create PR
         env:
