@@ -2,3 +2,9 @@
 #------------ Blocklist for Scam and Phishing------------------
 #--------------------------------------------------------------
 0.0.0.0 mmddtzcom3.com
+0.0.0.0 mmddtzcom3.com
+0.0.0.0 chinadomainservice.com
+0.0.0.0 mailcloudlead.com
+0.0.0.0 chinaregistry.com.cn
+0.0.0.0 vr-lnfo.net
+0.0.0.0 db-erweitern2.info

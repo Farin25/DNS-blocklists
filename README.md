@@ -16,7 +16,7 @@ Public DNS blocklists focused on privacy, ads, trackers and Scam, Phishing. Main
 
 ### Pi-hole
 
-Go to your Pi-hole Webinterface: `<pihole-ip>/admin`, log in and then go to settings and add the URL of the list you want:
+Go to your Pi-hole Webinterface: `<pihole-ip>/admin`, log in and then go to **List and add the URL of the list you want:**
 
 for Trackers and Advertisement:
 ```
@@ -35,6 +35,66 @@ https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/combined.txt
 
 Then run Update Gravity List under **Tools -> Update Gravity**.
 
+#### Optional: RegEx filter (Recommended)
+
+Set up the RegEx filter in Pi-hole under **Domains → RegEx filter**.
+
+> [!IMPORTANT]
+> RegEx filters are very strict and may break legitimate services. Add them one by one and test after each.
+
+**General tracking** Blocks domains used to track your behavior across websites:
+```
+(^|\.)tracking\.
+```
+
+**Google advertising** Blocks Google's ad delivery and bidding network:
+```
+(^|\.)doubleclick\.net$
+```
+```
+(^|\.)googlesyndication\.com$
+```
+
+**YouTube ads** Blocks the SDK that loads ads before and during YouTube videos:
+```
+(^|\.)imasdk\.googleapis\.com$
+```
+
+**Amazon advertising** Blocks Amazon's ad network and conversion tracking:
+```
+(^|\.)amazon-adsystem\.com$
+```
+```
+(^|\.)aax-eu\.amazon-adsystem\.com$
+```
+```
+(^|\.)fls\.amazon\.de$
+```
+
+**Prime Video analytics** Blocks viewership tracking on Prime Video:
+```
+(^|\.)smetrics\.primevideo\.com$
+```
+
+**Oracle Moat** Blocks ad measurement and viewability tracking used by large publishers:
+```
+(^|\.)moatads\.com$
+```
+
+**Conviva** Blocks video streaming analytics that track what you watch and for how long:
+```
+(^|\.)conviva\.com$
+```
+
+**Comscore** Blocks audience measurement tracking used by news sites and broadcasters:
+```
+(^|\.)scorecardresearch\.com$
+```
+
+**Joyn** Blocks ad and tracking infrastructure for the German streaming platform ProSiebenSat.1:
+```
+(^|\.)joyn\.de\.edgekey\.net$
+```
 ## Links
 - [Changelog](CHANGELOG.md)
 - [Lists](lists/)
