@@ -28,7 +28,7 @@ body:
     attributes:
       label: Reason
       description: Why should this domain be blocked? Add a source if possible.
-      placeholder: This domain tracks user behavior / is a known phishing domain. Source: ...
+      placeholder: "This domain tracks user behavior / is a known phishing domain. Source: ..."
     validations:
       required: true
 
