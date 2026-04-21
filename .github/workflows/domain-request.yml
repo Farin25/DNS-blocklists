@@ -52,7 +52,7 @@ jobs:
 
           git add $FILE
           git commit -m "feat: add $DOMAIN to $FILE (closes #$ISSUE_NUMBER)"
-          git push origin $BRANCH
+          git push origin $BRANCH --force
 
           gh pr create \
             --title "feat: add $DOMAIN" \
