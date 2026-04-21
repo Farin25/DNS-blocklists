@@ -22,7 +22,7 @@ jobs:
         env:
           BODY: ${{ github.event.issue.body }}
         run: |
-          DOMAIN=$(echo "$BODY" | grep -A1 "### Domain" | tail -1 | tr -d '[:space:]')
+          DOMAIN=$(echo "$BODY" | grep -A2 "### Domain" | grep -v "### Domain" | grep -v "^$" | head -1 | tr -d '[:space:]*')
           CATEGORY=$(echo "$BODY" | grep -A1 "### Category" | tail -1 | tr -d '[:space:]')
 
           if echo "$CATEGORY" | grep -q "tracker"; then
