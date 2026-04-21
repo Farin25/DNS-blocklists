@@ -7,7 +7,7 @@ Public DNS blocklists focused on privacy, ads, trackers and Scam, Phishing. Main
  
 | File | Description | URL |
 |------|-------------|-----|
-| `lists/tracker.txt` | Tracking domains (analytics, telemetry, fingerprinting and advertsiment) | https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/tracker.txt |
+| `lists/tracker.txt` | Tracking domains (analytics, telemetry, fingerprinting and Advertisement) | https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/tracker.txt |
 | `lists/scam.txt` | Scam and phishing domains | https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/scam.txt |
 | `lists/combined.txt` | Tracker and Scam list combined|https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/combined.txt |
 ---
@@ -18,7 +18,7 @@ Public DNS blocklists focused on privacy, ads, trackers and Scam, Phishing. Main
 
 Go to your Pi-hole Webinterface: `<pihole-ip>/admin`, log in and then go to settings and add the URL of the list you want:
 
-for Trackers and Advertsiment:
+for Trackers and Advertisement:
 ```
 https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/tracker.txt
 ```
@@ -28,12 +28,12 @@ for Scam and Phishing:
 https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/scam.txt
 ```
 
-for all combinied:
+for all combined:
 ```
 https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/combined.txt
 ```
 
-Than run Upadte Gravity List under **Tools -> Update Gravity**.
+Then run Update Gravity List under **Tools -> Update Gravity**.
 
 ## Links
 - [Changelog](CHANGELOG.md)
@@ -41,6 +41,13 @@ Than run Upadte Gravity List under **Tools -> Update Gravity**.
 
 ## How can I contribute to the list?
 
+### Do you want to add or remove a domain?
+
+Then create an issue using the domain request template under the following link: [https://github.com/Farin25/DNS-blocklists/issues](https://github.com/Farin25/DNS-blocklists/issues).
+
+### Want to contribute to the repository and write code?
+
+Then read through the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 
 ## License

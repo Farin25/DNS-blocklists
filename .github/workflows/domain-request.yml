@@ -23,9 +23,10 @@ jobs:
           BODY: ${{ github.event.issue.body }}
         run: |
           DOMAIN=$(echo "$BODY" | grep -A2 "### Domain" | grep -v "### Domain" | grep -v "^$" | head -1 | tr -d '[:space:]*')
-          CATEGORY=$(echo "$BODY" | grep -A1 "### Category" | tail -1 | tr -d '[:space:]')
+          CATEGORY=$(echo "$BODY" | grep -A2 "### Category" | grep -v "### Category" | grep -v "^$" | head -1 | tr -d '[:space:]')
+          ACTION=$(echo "$BODY" | grep -A2 "### Action" | grep -v "### Action" | grep -v "^$" | head -1 | tr -d '[:space:]')
 
-          if echo "$CATEGORY" | grep -q "tracker"; then
+          if echo "$CATEGORY" | grep -qi "tracker"; then
             FILE="lists/tracker.txt"
           else
             FILE="lists/scam.txt"
@@ -33,39 +34,77 @@ jobs:
 
           echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
           echo "file=$FILE" >> $GITHUB_OUTPUT
+          echo "action=$ACTION" >> $GITHUB_OUTPUT
 
       - name: Add domain and create PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOMAIN: ${{ steps.parse.outputs.domain }}
           FILE: ${{ steps.parse.outputs.file }}
+          ACTION: ${{ steps.parse.outputs.action }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          BRANCH="domain-request/$ISSUE_NUMBER"
-          git checkout -b $BRANCH 2>/dev/null || git checkout $BRANCH
+          if echo "$ACTION" | grep -qi "remove"; then
+            BRANCH="domain-request/remove-$DOMAIN"
 
-          printf "\n0.0.0.0 %s" "$DOMAIN" >> "$FILE"
+            # Prüfen ob Branch schon existiert
+            if git ls-remote --exit-code --heads origin $BRANCH > /dev/null 2>&1; then
+              gh issue comment $ISSUE_NUMBER \
+                --body "A removal request for \`$DOMAIN\` already exists. Please check the open pull requests."
+              exit 0
+            fi
+
+            # Prüfen ob Domain überhaupt in der Liste ist
+            if ! grep -q "0\.0\.0\.0 $DOMAIN" "$FILE"; then
+              gh issue comment $ISSUE_NUMBER \
+                --body "\`$DOMAIN\` was not found in \`$FILE\`. Nothing to remove."
+              exit 0
+            fi
+
+            git checkout -b $BRANCH
+            sed -i "/0\.0\.0\.0 $DOMAIN/d" "$FILE"
+            COMMIT_MSG="feat: remove $DOMAIN from $FILE (closes #$ISSUE_NUMBER)"
+            PR_TITLE="feat: remove $DOMAIN"
+            PR_BODY="Removes \`$DOMAIN\` from \`$FILE\`.\n\nCloses #$ISSUE_NUMBER"
+            COMMENT="A pull request has been created to remove \`$DOMAIN\` from \`$FILE\`. It will be reviewed shortly."
+
+          else
+            BRANCH="domain-request/add-$DOMAIN"
+
+            # Prüfen ob Branch schon existiert
+            if git ls-remote --exit-code --heads origin $BRANCH > /dev/null 2>&1; then
+              gh issue comment $ISSUE_NUMBER \
+                --body "A request to add \`$DOMAIN\` already exists. Please check the open pull requests."
+              exit 0
+            fi
+
+            # Prüfen ob Domain bereits in der Liste ist
+            if grep -q "0\.0\.0\.0 $DOMAIN" "$FILE"; then
+              gh issue comment $ISSUE_NUMBER \
+                --body "\`$DOMAIN\` is already in \`$FILE\`. No action needed."
+              exit 0
+            fi
+
+            git checkout -b $BRANCH
+            printf "\n0.0.0.0 %s" "$DOMAIN" >> "$FILE"
+            COMMIT_MSG="feat: add $DOMAIN to $FILE (closes #$ISSUE_NUMBER)"
+            PR_TITLE="feat: add $DOMAIN"
+            PR_BODY="Adds \`$DOMAIN\` to \`$FILE\`.\n\nCloses #$ISSUE_NUMBER"
+            COMMENT="A pull request has been created to add \`$DOMAIN\` to \`$FILE\`. It will be reviewed shortly."
+          fi
 
           git add "$FILE"
-          git commit -m "feat: add $DOMAIN to $FILE (closes #$ISSUE_NUMBER)"
+          git commit -m "$COMMIT_MSG"
           git push origin $BRANCH --force
 
           gh pr create \
-            --title "feat: add $DOMAIN" \
-            --body "Adds \`$DOMAIN\` to \`$FILE\`.\n\nCloses #$ISSUE_NUMBER" \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
             --base main \
             --head $BRANCH \
             --label "domain-request"
 
-      - name: Comment on issue
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DOMAIN: ${{ steps.parse.outputs.domain }}
-          FILE: ${{ steps.parse.outputs.file }}
-        run: |
-          gh issue comment ${{ github.event.issue.number }} \
-            --body "Thanks for your request! A pull request has been created to add \`$DOMAIN\` to \`$FILE\`. It will be reviewed shortly."
+          gh issue comment $ISSUE_NUMBER --body "$COMMENT"

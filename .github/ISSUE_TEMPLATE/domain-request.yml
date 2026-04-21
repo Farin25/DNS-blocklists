@@ -13,6 +13,17 @@ body:
       required: true
 
   - type: dropdown
+    id: action
+    attributes:
+      label: Action
+      description: Do you want to add or remove this domain?
+      options:
+        - Add
+        - Remove
+    validations:
+      required: true
+
+  - type: dropdown
     id: category
     attributes:
       label: Category
