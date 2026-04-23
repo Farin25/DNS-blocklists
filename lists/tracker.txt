@@ -7,7 +7,6 @@
 0.0.0.0 hbrt.adobe.com
 0.0.0.0 eu-mobile.events.data.microsoft.com
 0.0.0.0 mobile.events.data.microsoft.com
-0.0.0.0 bat.bing.com
 0.0.0.0 global.telemetry.insights.video.a2z.com
 0.0.0.0 c.amazon-adsystem.com
 0.0.0.0 www.google-analytics.com
