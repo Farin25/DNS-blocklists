@@ -41,3 +41,4 @@
 0.0.0.0 functions.adnami.io
 0.0.0.0 orbidder.otto.de
 0.0.0.0 rec.deezer.com
+0.0.0.0 test.de
