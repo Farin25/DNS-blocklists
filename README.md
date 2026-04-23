@@ -35,11 +35,14 @@ https://raw.githubusercontent.com/Farin25/DNS-blocklists/main/lists/combined.txt
 
 Then run Update Gravity List under **Tools -> Update Gravity**.
 
-#### Optional: RegEx filter (Recommended)
+<details>
+<summary> 
+ 
+#### Optional: RegEx filter (Recommended)</summary>
 
 Set up the RegEx filter in Pi-hole under **Domains → RegEx filter**.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > RegEx filters are very strict and may break legitimate services. Add them one by one and test after each.
 
 **General tracking** Blocks domains used to track your behavior across websites:
@@ -95,9 +98,17 @@ Set up the RegEx filter in Pi-hole under **Domains → RegEx filter**.
 ```
 (^|\.)joyn\.de\.edgekey\.net$
 ```
+
+</details>
+
 ## Links
 - [Changelog](CHANGELOG.md)
 - [Lists](lists/)
+
+### Support, help and feedback
+- [Discord](https://discord.gg/b2yDdCt5W)
+- [Stoat](https://stt.gg/H4sHjKg0) 
+- [Issue](https://github.com/Farin25/DNS-blocklists/issues)
 
 ## How can I contribute to the list?
 
