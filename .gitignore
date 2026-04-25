@@ -7,3 +7,10 @@
 
 # Logs
 *.log
+
+#temporär
+/temp
+suspicious.md
+
+#Tools
+/tools

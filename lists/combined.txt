@@ -1,7 +1,7 @@
 #-------------------------------------------------------------
 #- Combined Blocklist for Scam, Ads, Phishing and Trackers ---
 #------ https://github.com/Farin25/DNS-blocklists --------
-#------------ Updated: 2026-04-21 18:49 UTC ------
+#------------ Updated: 2026-04-25 11:57 UTC ------
 #-------------------------------------------------------------
 
 # === Tracker & Ads ===
@@ -48,6 +48,16 @@
 0.0.0.0 functions.adnami.io
 0.0.0.0 orbidder.otto.de
 0.0.0.0 rec.deezer.com
+0.0.0.0 www.dianomi.com
+0.0.0.0 dianomi.com
+0.0.0.0 xad.dnoticias.pt
+0.0.0.0 tracker-test.net
+0.0.0.0 recommendation.speakol.com
+0.0.0.0 crawler.speakol.com
+0.0.0.0 publishers.speakol.com
+0.0.0.0 acceptable.a-ads.com
+0.0.0.0 danbo.org
+
 # === Scam & Phishing ===
 #-------------------------------------------------------------
 #------------ Blocklist for Scam and Phishing------------------
@@ -59,3 +69,6 @@
 0.0.0.0 chinaregistry.com.cn
 0.0.0.0 vr-lnfo.net
 0.0.0.0 db-erweitern2.info
+0.0.0.0 paypal-opladen.be
+0.0.0.0 www.30-day-change.com
+0.0.0.0 30-day-change.com
