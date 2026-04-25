@@ -102,6 +102,7 @@ Set up the RegEx filter in Pi-hole under **Domains → RegEx filter**.
 </details>
 
 ## Links
+- [Webseite](https://farin25.github.io/DNS-blocklists/)
 - [Changelog](CHANGELOG.md)
 - [Lists](lists/)
 
