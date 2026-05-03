@@ -58,14 +58,14 @@ jobs:
             fi
 
             # Prüfen ob Domain überhaupt in der Liste ist
-            if ! grep -q "0\.0\.0\.0 $DOMAIN" "$FILE"; then
+            if ! grep -qxF "$DOMAIN" "$FILE"; then
               gh issue comment $ISSUE_NUMBER \
                 --body "\`$DOMAIN\` was not found in \`$FILE\`. Nothing to remove."
               exit 0
             fi
 
             git checkout -b $BRANCH
-            sed -i "/0\.0\.0\.0 $DOMAIN/d" "$FILE"
+            grep -vxF "$DOMAIN" "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
             COMMIT_MSG="feat: remove $DOMAIN from $FILE (closes #$ISSUE_NUMBER)"
             PR_TITLE="feat: remove $DOMAIN"
             PR_BODY="Removes \`$DOMAIN\` from \`$FILE\`.\n\nCloses #$ISSUE_NUMBER"
@@ -82,14 +82,14 @@ jobs:
             fi
 
             # Prüfen ob Domain bereits in der Liste ist
-            if grep -q "0\.0\.0\.0 $DOMAIN" "$FILE"; then
+            if grep -qxF "$DOMAIN" "$FILE"; then
               gh issue comment $ISSUE_NUMBER \
                 --body "\`$DOMAIN\` is already in \`$FILE\`. No action needed."
               exit 0
             fi
 
             git checkout -b $BRANCH
-            printf "\n0.0.0.0 %s" "$DOMAIN" >> "$FILE"
+            printf "\n%s" "$DOMAIN" >> "$FILE"
             COMMIT_MSG="feat: add $DOMAIN to $FILE (closes #$ISSUE_NUMBER)"
             PR_TITLE="feat: add $DOMAIN"
             PR_BODY="Adds \`$DOMAIN\` to \`$FILE\`.\n\nCloses #$ISSUE_NUMBER"

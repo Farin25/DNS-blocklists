@@ -1,70 +1,70 @@
 #-------------------------------------------------------------
 #------------ Blocklist for Trackers and Ads------------------
 #-------------------------------------------------------------
-0.0.0.0 cc-api-data.adobe.io
-0.0.0.0 aepxlg.adobe.com
-0.0.0.0 adobecorp.data.adobedc.net
-0.0.0.0 hbrt.adobe.com
-0.0.0.0 eu-mobile.events.data.microsoft.com
-0.0.0.0 mobile.events.data.microsoft.com
-0.0.0.0 bat.bing.com
-0.0.0.0 global.telemetry.insights.video.a2z.com
-0.0.0.0 c.amazon-adsystem.com
-0.0.0.0 www.google-analytics.com
-0.0.0.0 www.googletagmanager.com
-0.0.0.0 www.googleadservices.com
-0.0.0.0 google-analytics.com
-0.0.0.0 googletagmanager.com
-0.0.0.0 googleadservices.com
-0.0.0.0 partner.googleadservices.com
-0.0.0.0 googleads.g.doubleclick.net
-0.0.0.0 securepubads.g.doubleclick.net
-0.0.0.0 ep1.adtrafficquality.google
-0.0.0.0 grid-bidder.criteo.com
-0.0.0.0 static.criteo.net
-0.0.0.0 dynamic.criteo.com
-0.0.0.0 ib.adnxs.com
-0.0.0.0 fastlane.rubiconproject.com
-0.0.0.0 hbopenbid.pubmatic.com
-0.0.0.0 tlx.3lift.com
-0.0.0.0 htlb.casalemedia.com
-0.0.0.0 hb.adscale.de
-0.0.0.0 direct.adsrvr.org
-0.0.0.0 match.adsrvr.org
-0.0.0.0 ad.yieldlab.net
-0.0.0.0 i.connectad.io
-0.0.0.0 eu-data.kameleoon.io
-0.0.0.0 id5-sync.com
-0.0.0.0 static.hotjar.com
-0.0.0.0 cdn.taboola.com
-0.0.0.0 tags.creativecdn.com
-0.0.0.0 functions.adnami.io
-0.0.0.0 orbidder.otto.de
-0.0.0.0 rec.deezer.com
-0.0.0.0 www.dianomi.com
-0.0.0.0 dianomi.com
-0.0.0.0 xad.dnoticias.pt
-0.0.0.0 tracker-test.net
-0.0.0.0 recommendation.speakol.com
-0.0.0.0 crawler.speakol.com
-0.0.0.0 publishers.speakol.com
-0.0.0.0 acceptable.a-ads.com
-0.0.0.0 danbo.org
-0.0.0.0 cdn.yektanet.com
-0.0.0.0 biscotti.yektanet.com
-0.0.0.0 ua.yektanet.com
-0.0.0.0 static1.intrack.ir
-0.0.0.0 static.adverge.ir
-0.0.0.0 cdn.goftino.com
-0.0.0.0 rosysolvingscallion.com
-0.0.0.0 analyticsengine.s3.amazonaws.com
-0.0.0.0 analytics.s3.amazonaws.com
-0.0.0.0 mediavisor.doubleclick.net
-0.0.0.0 ads-api.tiktok.com
-0.0.0.0 ads-sg.tiktok.com
-0.0.0.0 analytics-sg.tiktok.com
-0.0.0.0 adtech.yahooinc.com
-0.0.0.0 adfstat.yandex.ru
-0.0.0.0 adfox.yandex.ru
-0.0.0.0 bdapi-in-ads.realmemobile.com
-0.0.0.0 my-tracknl.com
+cc-api-data.adobe.io
+aepxlg.adobe.com
+adobecorp.data.adobedc.net
+hbrt.adobe.com
+eu-mobile.events.data.microsoft.com
+mobile.events.data.microsoft.com
+bat.bing.com
+global.telemetry.insights.video.a2z.com
+c.amazon-adsystem.com
+www.google-analytics.com
+www.googletagmanager.com
+www.googleadservices.com
+google-analytics.com
+googletagmanager.com
+googleadservices.com
+partner.googleadservices.com
+googleads.g.doubleclick.net
+securepubads.g.doubleclick.net
+ep1.adtrafficquality.google
+grid-bidder.criteo.com
+static.criteo.net
+dynamic.criteo.com
+ib.adnxs.com
+fastlane.rubiconproject.com
+hbopenbid.pubmatic.com
+tlx.3lift.com
+htlb.casalemedia.com
+hb.adscale.de
+direct.adsrvr.org
+match.adsrvr.org
+ad.yieldlab.net
+i.connectad.io
+eu-data.kameleoon.io
+id5-sync.com
+static.hotjar.com
+cdn.taboola.com
+tags.creativecdn.com
+functions.adnami.io
+orbidder.otto.de
+rec.deezer.com
+www.dianomi.com
+dianomi.com
+xad.dnoticias.pt
+tracker-test.net
+recommendation.speakol.com
+crawler.speakol.com
+publishers.speakol.com
+acceptable.a-ads.com
+danbo.org
+cdn.yektanet.com
+biscotti.yektanet.com
+ua.yektanet.com
+static1.intrack.ir
+static.adverge.ir
+cdn.goftino.com
+rosysolvingscallion.com
+analyticsengine.s3.amazonaws.com
+analytics.s3.amazonaws.com
+mediavisor.doubleclick.net
+ads-api.tiktok.com
+ads-sg.tiktok.com
+analytics-sg.tiktok.com
+adtech.yahooinc.com
+adfstat.yandex.ru
+adfox.yandex.ru
+bdapi-in-ads.realmemobile.com
+my-tracknl.com
