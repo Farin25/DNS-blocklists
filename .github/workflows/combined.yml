@@ -28,6 +28,22 @@ jobs:
           echo "" >> lists/combined.txt
           echo "# === Scam & Phishing ===" >> lists/combined.txt
           cat lists/scam.txt >> lists/combined.txt
+          # Deduplicate domain entries while preserving comment lines and order
+          python3 - <<'EOF'
+          with open("lists/combined.txt", "r") as f:
+              lines = f.readlines()
+          seen = set()
+          result = []
+          for line in lines:
+              stripped = line.rstrip("\n")
+              if stripped.startswith("#") or stripped == "":
+                  result.append(line)
+              elif stripped not in seen:
+                  seen.add(stripped)
+                  result.append(line)
+          with open("lists/combined.txt", "w") as f:
+              f.writelines(result)
+          EOF
 
       - name: Commit and push
         run: |

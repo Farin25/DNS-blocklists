@@ -1,16 +1,14 @@
 #-------------------------------------------------------------
 #------------ Blocklist for Scam and Phishing------------------
 #--------------------------------------------------------------
-0.0.0.0 mmddtzcom3.com
-0.0.0.0 mmddtzcom3.com
-0.0.0.0 chinadomainservice.com
-0.0.0.0 mailcloudlead.com
-0.0.0.0 chinaregistry.com.cn
-0.0.0.0 vr-lnfo.net
-0.0.0.0 db-erweitern2.info
-0.0.0.0 paypal-opladen.be
-0.0.0.0 www.30-day-change.com
-0.0.0.0 30-day-change.com
-0.0.0.0 paqueteriadhl.com.mx
-0.0.0.0 www.paqueteriadhl.com.mx
-0.0.0.0 paqueteriadhl.com.mx
+mmddtzcom3.com
+chinadomainservice.com
+mailcloudlead.com
+chinaregistry.com.cn
+vr-lnfo.net
+db-erweitern2.info
+paypal-opladen.be
+www.30-day-change.com
+30-day-change.com
+paqueteriadhl.com.mx
+www.paqueteriadhl.com.mx
