@@ -1,7 +1,7 @@
 #-------------------------------------------------------------
 #- Combined Blocklist for Scam, Ads, Phishing and Trackers ---
 #------ https://github.com/Farin25/DNS-blocklists --------
-#------------ Updated: 2026-07-03 19:27 UTC ------
+#------------ Updated: 2026-08-22 21:14 UTC ------
 #-------------------------------------------------------------
 
 # === Tracker & Ads ===
@@ -17,6 +17,7 @@ mobile.events.data.microsoft.com
 bat.bing.com
 global.telemetry.insights.video.a2z.com
 c.amazon-adsystem.com
+aes.eu-west.ono.axp.amazon-adsystem.com
 www.google-analytics.com
 www.googletagmanager.com
 www.googleadservices.com
@@ -94,9 +95,25 @@ radar.cedexis.com
 sdk.iad01.braze.com
 sdk.fra01.braze.com
 sdk.iad02.braze.com
+sdk.iad-01.braze.com
+sdk.fra-01.braze.com
+sdk.iad-02.braze.com
 api.segment.io
 cdn.segment.com
 cdn.segment.io
+clarity.ms
+www.clarity.ms
+xplosion.de
+ups.xplosion.de
+cdn.xplosion.de
+emetriq.de
+cdn.emetriq.de
+dyn.emetriq.de
+uss.emetriq.de
+i-adq.mediation.unity3d.com
+adjust.io
+app.adjust.io
+cdn.adjust.com
 *.minerva.devices.a2z.com
 *.device-metrics-us.amazon.com
 *.device-metrics-us-2.amazon.com
