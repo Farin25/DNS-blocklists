@@ -1,5 +1,5 @@
 # DNS-blocklists
-Public DNS blocklists focused on privacy, ads, trackers and Scam, Phishing. Maintained for Pi-hole, AdGuard Home, and other DNS filtering systems.
+Public DNS blocklists focused on privacy, ad blocking, trackers, scams and phishing.
 
 
 
@@ -38,7 +38,7 @@ Then run Update Gravity List under **Tools -> Update Gravity**.
 <details>
 <summary> 
  
-#### Optional: RegEx filter (Recommended)</summary>
+#### Optional: RegEx filter </summary>
 
 Set up the RegEx filter in Pi-hole under **Domains → RegEx filter**.
 

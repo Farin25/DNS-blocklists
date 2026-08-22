@@ -75,11 +75,9 @@ beacon.scorecardresearch.com
 img.scorecardresearch.com
 odf.app-ads-services.com
 pixel.facebook.com
-connect.facebook.net
 tr.snapchat.com
 sc-static.net
 analytics.twitter.com
-t.co
 platform.twitter.com
 px.ads.linkedin.com
 snap.licdn.com
@@ -109,3 +107,12 @@ i-adq.mediation.unity3d.com
 adjust.io
 app.adjust.io
 cdn.adjust.com
+*.minerva.devices.a2z.com
+*.device-metrics-us.amazon.com
+*.device-metrics-us-2.amazon.com
+*.unagi.amazon.com
+fls-na.amazon.com
+data.microsoft.com
+adservice.google.com
+adservice.google.de
+tpc.googlesyndication.com
