@@ -1,5 +1,5 @@
-#-------------------------------------------------------------
-#------------ Blocklist for Scam and Phishing------------------
+#--------------------------------------------------------------
+#------ Blocklist for Scam, Phishing and Malware --------------
 #--------------------------------------------------------------
 mmddtzcom3.com
 chinadomainservice.com
@@ -14,3 +14,7 @@ paqueteriadhl.com.mx
 www.paqueteriadhl.com.mx
 orca-slicer.com
 orca-slicer.dev
+ingestwebneo.com
+heartbeatyardpoint.com
+adserverworkshub.com
+monitoropsworks.com
