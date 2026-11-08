@@ -1,7 +1,7 @@
 #-------------------------------------------------------------
 #- Combined Blocklist for Scam, Ads, Phishing and Trackers ---
 #------ https://github.com/Farin25/DNS-blocklists --------
-#------------ Updated: 2026-08-22 21:14 UTC ------
+#------------ Updated: 2026-11-08 17:11 UTC ------
 #-------------------------------------------------------------
 
 # === Tracker & Ads ===
@@ -125,8 +125,8 @@ adservice.google.de
 tpc.googlesyndication.com
 
 # === Scam & Phishing ===
-#-------------------------------------------------------------
-#------------ Blocklist for Scam and Phishing------------------
+#--------------------------------------------------------------
+#------ Blocklist for Scam, Phishing and Malware --------------
 #--------------------------------------------------------------
 mmddtzcom3.com
 chinadomainservice.com
@@ -141,3 +141,7 @@ paqueteriadhl.com.mx
 www.paqueteriadhl.com.mx
 orca-slicer.com
 orca-slicer.dev
+ingestwebneo.com
+heartbeatyardpoint.com
+adserverworkshub.com
+monitoropsworks.com
